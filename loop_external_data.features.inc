@@ -5,6 +5,19 @@
  */
 
 /**
+ * Implements hook_ctools_plugin_api().
+ */
+function loop_external_data_ctools_plugin_api($module = NULL, $api = NULL) {
+  if ($module == "page_manager" && $api == "pages_default") {
+    return array("version" => "1");
+  }
+  if ($module == "strongarm" && $api == "strongarm") {
+    return array("version" => "1");
+  }
+  return NULL;
+}
+
+/**
  * Implements hook_node_info().
  */
 function loop_external_data_node_info() {
